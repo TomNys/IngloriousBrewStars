@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3F51B5"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        tools:context=".MyActivity"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:id="@+id/toolbar">
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Storage place advanced"
+        android:id="@+id/titleadvanced"
+        android:textColor="@color/white"
+        android:layout_alignBottom="@+id/toolbar"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_marginBottom="16dp" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listViewInventory"
+        android:layout_below="@+id/view"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="350dp"
+        android:background="@color/white"/>
+
+    <TextView
+        android:layout_width="160dp"
+        android:layout_height="80dp"
+        android:id="@+id/textView2"
+        android:background="@color/white"
+        android:layout_alignTop="@+id/listViewInventory"
+        android:layout_alignLeft="@+id/listViewInventory"
+        android:layout_alignStart="@+id/listViewInventory"
+        android:layout_marginTop="216dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Add items"
+        android:id="@+id/textView3"
+        android:layout_marginBottom="84dp"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_marginLeft="1dp"
+        android:textSize="15dp"/>
+
+    <TextView
+        android:layout_width="160dp"
+        android:layout_height="80dp"
+        android:id="@+id/textView4"
+        android:background="@color/white"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignRight="@+id/listViewInventory"
+        android:layout_alignEnd="@+id/listViewInventory" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Add full containers"
+        android:id="@+id/textView5"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_marginLeft="1dp"
+        android:textSize="15dp"/>
+
+    <TextView
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="In one cont."
+        android:id="@+id/textView6"
+        android:textSize="17dp"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Cont."
+        android:id="@+id/textView7"
+        android:textSize="17dp"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignRight="@+id/textView4"
+        android:layout_alignEnd="@+id/textView4"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD"
+        android:id="@+id/buttonAddItem"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/textView2"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_alignEnd="@+id/textView2"
+        android:background="#3F51B5"
+        android:textColor="@color/white"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD"
+        android:id="@+id/buttonAddContainer"
+        android:background="#3F51B5"
+        android:textColor="@color/white"
+        android:layout_alignBottom="@+id/buttonAddItem"
+        android:layout_alignRight="@+id/textView7"
+        android:layout_alignEnd="@+id/textView7"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editTextItemsInContainer"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignLeft="@+id/titleadvanced"
+        android:layout_alignStart="@+id/titleadvanced"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignRight="@+id/textView3"
+        android:layout_alignEnd="@+id/textView3"
+        android:background="@android:color/transparent"
+        android:hint="0"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:text=""/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editTextContainers"
+        android:background="@android:color/transparent"
+        android:hint="0"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_toLeftOf="@+id/textView7"
+        android:layout_toStartOf="@+id/textView7"
+        android:layout_alignTop="@+id/textView4"
+        android:layout_above="@+id/buttonAddItem"
+        android:text=""/>
+
+</RelativeLayout>
