@@ -212,11 +212,19 @@ public class SettingsCategories  extends Activity {
                                             Integer maxBottles;
                                             if (input2.getText().toString().equals("")) {
                                                 maxBottles = mListAdapter.getItem(position).getMaxBottles();
+
                                             } else {
                                                 maxBottles = Integer.parseInt(input2.getText().toString());
                                             }
+                                            Boolean editCanBeHalfFull;
+                                            if (input2.getText().toString().equals("0")) {
+                                                editCanBeHalfFull = false;
+                                            } else {
+                                                editCanBeHalfFull = mListAdapter.getItem(position).getCanBeHalfFull();
+                                            }
 
-                                            Category editedCategory = new Category(new_name, maxBottles, itemCanBeHalfFull);
+
+                                            Category editedCategory = new Category(new_name, maxBottles, editCanBeHalfFull);
                                             mFirebaseRef.child(new_name).setValue(editedCategory);
                                             if (!(itemName.equals(new_name))) {
                                                 mFirebaseRef.child(itemName).getRef().removeValue();
