@@ -208,12 +208,14 @@ public class SettingsCategories  extends Activity {
                                             Toast.makeText(getApplicationContext(), "You did not enter a category name.", Toast.LENGTH_SHORT).show();
                                         } else {
                                             //Hier code schrijven om category aan te passen
-                                            Map<String, Object> name = new HashMap<String, Object>();
-                                            Map<String, Object> maxBottles = new HashMap<String, Object>();
-                                            name.put("name", input1.getText().toString());
-                                            maxBottles.put("maxBottles", input2.getText().toString());
-                                            mFirebaseRef.child(itemKey).updateChildren(name);
-                                            mFirebaseRef.child(itemKey).updateChildren(maxBottles);
+                                            String new_name = input1.getText().toString();
+                                            Integer maxBottles = Integer.parseInt(input2.getText().toString());
+
+                                            Category editedCategory = new Category(new_name, maxBottles, itemCanBeHalfFull);
+                                            mFirebaseRef.child(new_name).setValue(editedCategory);
+                                            if (itemName != new_name) {
+                                                mFirebaseRef.child(itemName).getRef().removeValue();
+                                            }
                                         }
                                         Log.i("AlertDialog", "TextEntry 1 Entered " + input1.getText().toString());
                                         Log.i("AlertDialog", "TextEntry 2 Entered " + input2.getText().toString());
@@ -248,8 +250,7 @@ public class SettingsCategories  extends Activity {
                                         }
                                     })
                                     .setIcon(android.R.drawable.ic_dialog_alert).show();
-                        }
-                        else {
+                        } else {
                             //itemRef.remove();
                             itemRef.removeValue();
                             mListAdapter.cleanup();

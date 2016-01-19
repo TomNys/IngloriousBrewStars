@@ -103,19 +103,6 @@ public class EditStoragePlace extends AppCompatActivity {
                 }
                 else {
                     //Hier code om naar database weg te schrijven.
-                    Map<String, Object> Name = new HashMap<String, Object>();
-                    Map<String, Object> Address = new HashMap<String, Object>();
-                    Map<String, Object> Zip = new HashMap<String, Object>();
-                    Map<String, Object> City = new HashMap<String, Object>();
-                    Name.put("name", name);
-                    Address.put("address", address);
-                    Zip.put("zip", zip);
-                    City.put("city", city);
-
-                    mFirebaseRef.child(original_name).updateChildren(Name);
-                    mFirebaseRef.child(original_name).updateChildren(Address);
-                    mFirebaseRef.child(original_name).updateChildren(Zip);
-                    mFirebaseRef.child(original_name).updateChildren(City);
 
                     StoragePlace editedPlace = new StoragePlace(name, address, city, zip);
                     mFirebaseRef.child(name).setValue(editedPlace);
