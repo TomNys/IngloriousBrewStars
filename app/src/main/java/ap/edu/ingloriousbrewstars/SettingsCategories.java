@@ -209,11 +209,16 @@ public class SettingsCategories  extends Activity {
                                         } else {
                                             //Hier code schrijven om category aan te passen
                                             String new_name = input1.getText().toString();
-                                            Integer maxBottles = Integer.parseInt(input2.getText().toString());
+                                            Integer maxBottles;
+                                            if (input2.getText().toString().equals("")) {
+                                                maxBottles = mListAdapter.getItem(position).getMaxBottles();
+                                            } else {
+                                                maxBottles = Integer.parseInt(input2.getText().toString());
+                                            }
 
                                             Category editedCategory = new Category(new_name, maxBottles, itemCanBeHalfFull);
                                             mFirebaseRef.child(new_name).setValue(editedCategory);
-                                            if (itemName != new_name) {
+                                            if (!(itemName.equals(new_name))) {
                                                 mFirebaseRef.child(itemName).getRef().removeValue();
                                             }
                                         }
