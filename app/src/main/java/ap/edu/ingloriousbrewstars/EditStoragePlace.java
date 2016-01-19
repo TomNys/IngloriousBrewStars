@@ -116,6 +116,11 @@ public class EditStoragePlace extends AppCompatActivity {
                     mFirebaseRef.child(original_name).updateChildren(Address);
                     mFirebaseRef.child(original_name).updateChildren(Zip);
                     mFirebaseRef.child(original_name).updateChildren(City);
+
+                    StoragePlace editedPlace = new StoragePlace(name, address, city, zip);
+                    mFirebaseRef.child(name).setValue(editedPlace);
+                    mFirebaseRef.child(original_name).getRef().removeValue();
+
                     //Doordat view terug geopend wordt zal de listview geupdate zijn.
                     Intent SettingStoragePlace = new Intent(getApplicationContext(), SettingsStoragePlaces.class);
                     startActivity(SettingStoragePlace);
