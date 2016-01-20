@@ -217,7 +217,7 @@ public class SettingsCategories  extends Activity {
                                                 maxBottles = Integer.parseInt(input2.getText().toString());
                                             }
                                             Boolean editCanBeHalfFull;
-                                            if (input2.getText().toString().equals("0")) {
+                                            if (input2.getText().toString().equals("0") || input2.getText().toString().equals("")) {
                                                 editCanBeHalfFull = false;
                                             } else {
                                                 editCanBeHalfFull = mListAdapter.getItem(position).getCanBeHalfFull();
