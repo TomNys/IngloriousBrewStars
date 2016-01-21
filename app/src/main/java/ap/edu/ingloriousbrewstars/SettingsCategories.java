@@ -212,7 +212,6 @@ public class SettingsCategories  extends Activity {
                                             Integer maxBottles;
                                             if (input2.getText().toString().equals("")) {
                                                 maxBottles = mListAdapter.getItem(position).getMaxBottles();
-
                                             } else {
                                                 maxBottles = Integer.parseInt(input2.getText().toString());
                                             }
@@ -228,6 +227,9 @@ public class SettingsCategories  extends Activity {
                                             mFirebaseRef.child(new_name).setValue(editedCategory);
                                             if (!(itemName.equals(new_name))) {
                                                 mFirebaseRef.child(itemName).getRef().removeValue();
+                                            }
+                                            if (input2.getText().toString().equals("")) {
+                                                mFirebaseRef.child(new_name).child("maxBottles").removeValue();
                                             }
                                         }
                                         Log.i("AlertDialog", "TextEntry 1 Entered " + input1.getText().toString());
