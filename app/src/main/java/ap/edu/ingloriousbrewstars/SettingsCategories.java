@@ -220,7 +220,7 @@ public class SettingsCategories  extends Activity {
                                             if (input2.getText().toString().equals("0") || input2.getText().toString().equals("")) {
                                                 editCanBeHalfFull = false;
                                             } else {
-                                                editCanBeHalfFull = mListAdapter.getItem(position).getCanBeHalfFull();
+                                                editCanBeHalfFull = true;
                                             }
 
 
